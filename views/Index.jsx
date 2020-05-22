@@ -45,6 +45,9 @@ class Index extends React.Component {
                         })}
                     </ul>
                 </aside>
+                <footer className="foot">
+                    <h2></h2>
+                </footer>
             </div> 
         </Layout>
         
