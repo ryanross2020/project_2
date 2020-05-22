@@ -6,6 +6,12 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const show = console.log;
+const blogController = require('./controllers/blogs.js');
+const userController = require('./controllers/user_controller.js');
+const recipeController = require('./controllers/recipes.js');
+const session = require('express-session');
+const bcrypt = require ('bcrypt')
 //___________________
 //Port
 //___________________
@@ -34,6 +40,14 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
+// Controllers
+app.use('/blogs', blogController);
+app.use('/user', userController);
+app.use('/recipes', recipeController);
 //___________________
 // Routes
 //___________________
@@ -44,4 +58,4 @@ app.get('/' , (req, res) => {
 //___________________
 //Listener
 //___________________
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+app.listen(PORT, () => show( 'Listening on port:', PORT));
