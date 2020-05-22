@@ -1,0 +1,21 @@
+
+
+/* :root {
+    --mainColor:
+    --backColor: 
+    --titleColor:
+    --textColor:
+    --accentColor:
+    --accent2Color: 
+     
+
+    --mainFont: 
+    --titleFont: 
+    --accentFont: 
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
