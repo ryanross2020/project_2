@@ -7,7 +7,7 @@ const express = require('express')
 const blogController = express.Router();
 // Bring in Mongoose and Fruit Schema
 // const mongoose = require('mongoose')
-const Blog = require('../models/blogs.js')
+const Blog = require('../models/blog.js')
 
 const isAuthenticated = (req, res, next) => {
     if (req.session.currentUser) {

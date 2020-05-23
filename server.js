@@ -8,7 +8,7 @@ const app = express ();
 const db = mongoose.connection;
 const show = console.log;
 const blogController = require('./controllers/blogs.js');
-const userController = require('./controllers/user_controller.js');
+const userController = require('./controllers/users_controller.js');
 const recipeController = require('./controllers/recipes.js');
 const session = require('express-session');
 const bcrypt = require ('bcrypt')
@@ -47,7 +47,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 // Controllers
 app.use('/blogs', blogController);
 app.use('/user', userController);
-app.use('/recipes', recipeController);
+app.use('/blogs', recipeController);
 //___________________
 // Routes
 //___________________

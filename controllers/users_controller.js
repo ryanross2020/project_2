@@ -15,7 +15,7 @@ users.post('/', (req, res) => {
 
     User.create(req.body, (error, createdUser) => {
         console.log(createdUser);
-        res.redirect('/logs');
+        res.redirect('/blogs');
     });
 });
 

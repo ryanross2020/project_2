@@ -3,17 +3,16 @@ const Layout = require('./Layout.jsx');
 
 class Index extends React.Component {
   render() {
-    // const logout = (
-    //     <form action="/sessions/?_method=delete" method="post">
-    //         <input type="submit" value="Logout" />
-    //     </form>
-    // );
-    const { blogs } = this.props;
+    const logout = (
+        <form action="/sessions/?_method=delete" method="post">
+            <input type="submit" value="Logout" />
+        </form>
+    );
+    const { blogs, recipes } = this.props;
     return (
         <Layout title="INDEX PAGE">
             <div>
                 <header className="banner">
-                    <h1>Captains' Logs</h1>
                 </header>
                 <nav className="navbar">
                     <p className="username">{this.props.username}</p>
@@ -38,8 +37,8 @@ class Index extends React.Component {
                             console.log(recipe._id);
                             return (
                                 <li className="recipes">
-                                <a className="recipetitle" href={`/recipes/${recipe._id}`}>{recipe.title}</a>
-                                <a href={`/recipes/${recipe._id}`}><img style={{width: '100px', height: '200px'}} src={recipe.img}/></a><br/>
+                                <a className="recipetitle" href={`/blogs/${recipe._id}`}>{recipe.title}</a>
+                                <a href={`/blogs/${recipe._id}`}><img style={{width: '100px', height: '200px'}} src={recipe.img}/></a><br/>
                                 </li>
                             );
                         })}
