@@ -50,6 +50,7 @@ app.use('/user', userController);
 app.use('/recipes', recipeController);
 //___________________
 // Routes
+//___________________
 // Authorization Route
 const isAuthenticated = (req, res, next) => {
     if (req.session.currentUser) {
