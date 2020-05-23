@@ -50,6 +50,45 @@ app.use('/user', userController);
 app.use('/recipes', recipeController);
 //___________________
 // Routes
+// Authorization Route
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+      return next()
+    } else {
+      res.redirect('/sessions/new')
+    }
+};
+
+// Route to login Page
+app.get('/sessions/new', (req, res) => {
+    res.render('sessions/New', {
+        currentUser: req.session.currentUser });
+});
+
+// Authorization Route, Login
+app.post('/sessions/', (req, res) => {
+    User.findOne({username: req.body.username},(error, foundUser) => {
+        if(error) {
+            res.send(error)
+        } else if (!foundUser){
+            res.redirect('/users/new')
+        } else {
+            if(bcrypt.compareSync(req.body.password, foundUser.password)){
+                req.session.currentUser = foundUser.username
+                res.redirect('/logs/')
+            }else {
+                res.send('WRONG PASSWORD')
+            }
+        }
+    });
+});
+
+app.delete('/sessions/', (req, res) => {
+    req.session.destroy(() => {
+        res.redirect('/sessions/new')
+    });
+});
+
 //___________________
 //localhost:3000 
 app.get('/' , (req, res) => {
