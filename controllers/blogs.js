@@ -61,7 +61,7 @@ blogController.post('/', (req, res) => {
 //             readyToEat:true
 //         }
 //     ], (err, data)=>{
-//         res.redirect('/fruits');
+//         res.redirect('/blogs');
 //     })
 // });
 
@@ -76,7 +76,7 @@ blogController.delete('/:id', isAuthenticated, (req, res) => {
  blogController.get('/:id', isAuthenticated, (req, res) => {
      Blog.findById(req.params.id, (error, foundBlog) => {
          res.render('Show', {
-                 log: foundBlog,
+                 blog: foundBlog,
          });    
      });
  });
@@ -84,7 +84,7 @@ blogController.delete('/:id', isAuthenticated, (req, res) => {
  // Edit 
  blogController.get('/edit/:id', isAuthenticated, (req, res) => {
      Blog.findById(req.params.id, (error, foundBlog) => {
-         res.render('Edit', { log: foundBlog });
+         res.render('Edit', { blog: foundBlog });
      });
  });
  
@@ -95,8 +95,6 @@ blogController.delete('/:id', isAuthenticated, (req, res) => {
      });
  });
  
- 
- //////////////////////////////
- 
+ //___________________
  //Export
  module.exports = blogController;
