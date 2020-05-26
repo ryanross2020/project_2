@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout = require('./Layout.jsx');
+const Layout = require('../Layout.jsx');
 
 class EditRecipe extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class EditRecipe extends React.Component {
                     <h1>Edit Recipe</h1>
             </header>
             <nav className="navbar">
-              <a className="navlink" href="/logs">Home</a>
+              <a className="navlink" href="/blogs">Home</a>
               <a className="navlink" href="#">Logout</a>
             </nav>
             <div className="editcontainer">
@@ -22,9 +22,9 @@ class EditRecipe extends React.Component {
                     <br/>
                     <u>Entry</u>
                     <br/>
-                        Ingredients: <textarea name="entry" value={recipe.entry.ingredients}></ textarea>
+                        Ingredients: <textarea name="entry.ingredients" value={recipe.entry.ingredients}></ textarea>
                         <br/>
-                        Directions: <textarea name="entry" value={recipe.entry.directions}></   textarea>
+                        Directions: <textarea name="entry.directions" value={recipe.entry.directions}></   textarea>
                         <br/>
                     Image URL: <input type="text" name="img" value={recipe.img} />
                     <br/>

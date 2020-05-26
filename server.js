@@ -47,7 +47,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 // Controllers
 app.use('/blogs', blogController);
 app.use('/user', userController);
-app.use('/blogs', recipeController);
+app.use('/recipes', recipeController);
 //___________________
 // Routes
 //___________________

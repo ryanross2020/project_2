@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout = require('./Layout.jsx');
+const Layout = require('../Layout.jsx');
 
 class Edit extends React.Component {
   render() {
@@ -15,14 +15,14 @@ class Edit extends React.Component {
             </nav>
             <div className="editcontainer">
               <div className="editcard">
-                <form action={`/blogs/new/${blog._id}?_method=put`} method="POST">
-                    Title: <input type="text" name="title" value={blog.title} />
+                <form action={`/blogs`} method="POST">
+                    Title: <input type="text" name="title" />
                     <br/>
-                    Author: <input type="text" name="author" value={blog.author} />
+                    Author: <input type="text" name="author" />
                     <br/>
-                    Entry: <textarea name="entry" value={blog.entry}></textarea>
+                    Entry: <textarea name="entry" ></textarea>
                     <br/>
-                    Image URL: <input type="text" name="img" value={blog.img} />
+                    Image URL: <input type="text" name="img" />
                     <br/>
                     <input className="submits" type="submit" name="" value="Add New Blog"/>
                 </form>

@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout = require('./Layout.jsx');
+const Layout = require('../Layout.jsx');
 
 class NewRecipe extends React.Component {
   render() {
@@ -10,23 +10,23 @@ class NewRecipe extends React.Component {
                     <h1>New Recipe</h1>
             </header>
             <nav className="navbar">
-              <a className="navlink" href="/logs">Home</a>
+              <a className="navlink" href="/blogs">Home</a>
               <a className="navlink" href="#">Logout</a>
             </nav>
             <div className="editcontainer">
               <div className="editcard">
-                <form action={`/recipes/new/${recipe._id}?_method=put`} method="POST">
-                    Title: <input type="text" name="title" value={recipe.title} />
+                <form action={`/recipes`} method="POST">
+                    Title: <input type="text" name="title"  />
                     <br/>
-                    Author: <input type="text" name="author" value={recipe.author} />
+                    Author: <input type="text" name="author"  />
                     <br/>
                     <u>Entry</u>
                     <br/>
-                        Ingredients: <textarea name="entry" value={recipe.entry.ingredients}></ textarea>
+                        Ingredients: <textarea name="entry.ingredients" ></ textarea>
                         <br/>
-                        Directions: <textarea name="entry" value={recipe.entry.directions}></   textarea>
+                        Directions: <textarea name="entry.directions" ></   textarea>
                         <br/>
-                    Image URL: <input type="text" name="img" value={recipe.img} />
+                    Image URL: <input type="text" name="img" />
                     <br/>
                     <input className="submits" type="submit" name="" value="Add New Recipe"/>
                 </form>

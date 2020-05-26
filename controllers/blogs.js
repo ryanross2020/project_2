@@ -7,7 +7,8 @@ const express = require('express')
 const blogController = express.Router();
 // Bring in Mongoose and Fruit Schema
 // const mongoose = require('mongoose')
-const Blog = require('../models/blog.js')
+const Blog = require('../models/blogs.js')
+const Recipe = require('../models/recipes.js')
 
 const isAuthenticated = (req, res, next) => {
     if (req.session.currentUser) {
@@ -23,15 +24,18 @@ const isAuthenticated = (req, res, next) => {
 // Index
 blogController.get('/', (req, res) => {
     Blog.find({}, (error, allBlogs) => {
-        console.log(req.session);
+        Recipe.find({}, (error,allRecipes) => {
+            console.log(req.session);
          res.render('Index', {
              blogs: allBlogs,
+             recipes: allRecipes
          });
+        }) 
      });
  });
 
  // New
- blogController.get('/new', isAuthenticated, (req, res) => {
+ blogController.get('blogs/new', (req, res) => {
     res.render('New');
 });
 
@@ -66,23 +70,23 @@ blogController.post('/', (req, res) => {
 // });
 
 // Delete 
-blogController.delete('/:id', isAuthenticated, (req, res) => {
+blogController.delete('/:id', (req, res) => {
     Blog.findByIdAndRemove(req.params.id, (error, data) => { 
          res.redirect('/blogs');
      });
  });
  
  // Show 
- blogController.get('/:id', isAuthenticated, (req, res) => {
+ blogController.get('blogs/:id', (req, res) => {
      Blog.findById(req.params.id, (error, foundBlog) => {
          res.render('Show', {
-                 blog: foundBlog,
+                 blog: foundBlog
          });    
      });
  });
  
  // Edit 
- blogController.get('/edit/:id', isAuthenticated, (req, res) => {
+ blogController.get('/edit/:id', (req, res) => {
      Blog.findById(req.params.id, (error, foundBlog) => {
          res.render('Edit', { blog: foundBlog });
      });
