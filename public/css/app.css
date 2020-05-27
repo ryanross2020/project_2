@@ -1,0 +1,22 @@
+
+
+:root {
+    --mainColor:rgb(220, 205, 184);
+    --backColor: rgb(46, 75, 97);
+    --accentColor: rgb(125, 111, 99);
+    --anotherColor: rgb(107, 100, 100);
+    --fontColor: rgb(49, 45, 42);
+    --textColor: rgb(136,174,174);
+    --popColor: #278d9f;
+
+    --mainFont: ;
+    --titleFont: ;
+    --accentFont: ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid gold;
+}

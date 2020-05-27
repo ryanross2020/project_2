@@ -3,13 +3,20 @@ const Layout = require('../Layout.jsx')
 
 class Show extends React.Component {
     render(){
+        const logout = (
+            <form action="/sessions/?_method=delete" method="post">
+                <input type="submit" value="Logout" />
+            </form>
+        );
         const {blog} = this.props
         return (
             <Layout title="Show Page">
                <header className="banner"></header>
                 <nav className="navbar">
-                    <p className="username">{this.props.username}</p>
-                    <a className="navlink" href="/blogs/new">Add a New Blog</a>
+                    <a className="navlink" href="/blogs">Home</a><br/>
+                    <a className="navlink" href="/blogs/new">Add a New Blog</a><br/>
+                    <h3 className="username">{this.props.username}</h3><br/>
+                    <button>{this.props.username ? logout : '' }Logout</button>
                 </nav>
                 <div className= "showContainer">
                     <div className="showCard">

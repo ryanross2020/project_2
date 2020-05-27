@@ -3,6 +3,11 @@ const Layout = require('../Layout.jsx');
 
 class NewRecipe extends React.Component {
   render() {
+      const logout = (
+        <form action="/sessions/?_method=delete" method="post">
+            <input type="submit" value="Logout" />
+        </form>
+      );
       const {recipe} = this.props;
     return (
         <Layout>
@@ -10,8 +15,9 @@ class NewRecipe extends React.Component {
                     <h1>New Recipe</h1>
             </header>
             <nav className="navbar">
-              <a className="navlink" href="/blogs">Home</a>
-              <a className="navlink" href="#">Logout</a>
+                    <a className="navlink" href="/blogs">Home</a><br/>
+                    <h3 className="username">{this.props.username}</h3><br/>
+                    <button>{this.props.username ? logout : '' }Logout</button>
             </nav>
             <div className="editcontainer">
               <div className="editcard">

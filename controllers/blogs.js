@@ -35,8 +35,8 @@ blogController.get('/', (req, res) => {
  });
 
  // New
- blogController.get('blogs/new', (req, res) => {
-    res.render('New');
+ blogController.get('/new', (req, res) => {
+    res.render('blogs/New');
 });
 
 // Create
@@ -50,20 +50,30 @@ blogController.post('/', (req, res) => {
 // blogController.get('/seed', (req, res)=>{
 //     Blog.create([
 //         {
-//             name:'grapefruit',
-//             color:'pink',
-//             readyToEat:true
+//             title:'Restoration Hardware - Scottsdale Quarter',
+//             author:'Ryan Ross',
+//             entry: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//             img: "../img/restoration-hardware.jpeg",
 //         },
 //         {
-//             name:'grape',
-//             color:'purple',
-//             readyToEat:false
+//             title:'Brunch with the Boys',
+//             author:'Ryan Ross',
+//             entry: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//             img: "../img/brunch.jpeg",
 //         },
 //         {
-//             name:'avocado',
-//             color:'green',
-//             readyToEat:true
-//         }
+//             title:'Donut Bar - San Diego',
+//             author:'Ryan Ross',
+//             entry: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//             img: "../img/rdonut-bar.jpeg",
+//         },
+//         {
+//             title:'Arizona Sunsets',
+//             author:'Ryan Ross',
+//             entry: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//             img: "../img/sunset.jpeg",
+//         },
+
 //     ], (err, data)=>{
 //         res.redirect('/blogs');
 //     })
@@ -77,9 +87,9 @@ blogController.delete('/:id', (req, res) => {
  });
  
  // Show 
- blogController.get('blogs/:id', (req, res) => {
+ blogController.get('/:id', (req, res) => {
      Blog.findById(req.params.id, (error, foundBlog) => {
-         res.render('Show', {
+         res.render('blogs/Show', {
                  blog: foundBlog
          });    
      });
@@ -88,7 +98,7 @@ blogController.delete('/:id', (req, res) => {
  // Edit 
  blogController.get('/edit/:id', (req, res) => {
      Blog.findById(req.params.id, (error, foundBlog) => {
-         res.render('Edit', { blog: foundBlog });
+         res.render('blogs/Edit', { blog: foundBlog });
      });
  });
  

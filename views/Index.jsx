@@ -16,8 +16,11 @@ class Index extends React.Component {
                 <header className="banner">
                 </header>
                 <nav className="navbar">
-                    <p className="username">{this.props.username}</p>
-                    <a className="navlink" href="/blogs/new">Add A New Entry</a>
+                    <a className="navlink" href="/blogs">Home</a><br/>
+                    <a href="/users/new" className="navlink">New Sign-Up</a>
+                    <a href="/sessions/new" className="navlink">Login</a>
+                    <h3 className="username">{this.props.username}</h3><br/>
+                    <button>{this.props.username ? logout : '' }Logout</button>
                 </nav>
                 <div className="blogcontainer">
                     <ul>
