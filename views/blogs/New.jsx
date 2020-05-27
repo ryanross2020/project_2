@@ -10,7 +10,7 @@ class Edit extends React.Component {
       );
       const {blog} = this.props;
     return (
-        <Layout>
+        <Layout title="New Blog Page">
             <header className="banner">
                     <h1>New Blog Post</h1>
             </header>
@@ -19,8 +19,8 @@ class Edit extends React.Component {
                     <h3 className="username">{this.props.username}</h3><br/>
                     <button>{this.props.username ? logout : '' }Logout</button>
             </nav>
-            <div className="editcontainer">
-              <div className="editcard">
+            <div className="editContainer">
+              <div className="editCard">
                 <form action={`/blogs`} method="POST">
                     Title: <input type="text" name="title" />
                     <br/>

@@ -9,9 +9,6 @@
     --textColor: rgb(136,174,174);
     --popColor: #278d9f;
 
-    --mainFont: ;
-    --titleFont: ;
-    --accentFont: ;
 }
 
 *{
@@ -19,4 +16,87 @@
     padding: 0;
     box-sizing: border-box;
     border: 1px solid gold;
+}
+
+body {
+
+}
+
+.banner {
+    height: 300px;
+    background-color: var(--fontColor);
+    background-image: url('../img/RecipeHeader-1900x800.jpeg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 50px;
+}
+.navbar {
+    background-color: var(--accentColor);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+}
+
+.navlink {
+    background-color: var(--textColor);
+}
+
+.blogContainer {
+    background-color: var(--fontColor);
+}
+
+ul {
+
+}
+
+.posts {
+
+}
+
+.blogtitle {
+
+}
+
+.recipeContainer {
+    background-color: var(--mainColor);
+}
+
+.foot {
+
+}
+
+h2 {
+
+}
+
+.showContainer {
+
+}
+
+.showCard {
+
+}
+
+.editContainer {
+
+}
+
+.editCard {
+
+}
+
+.userContainer {
+
+}
+
+.userCard {
+
+}
+
+.submits {
+
 }

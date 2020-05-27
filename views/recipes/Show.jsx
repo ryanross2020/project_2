@@ -10,7 +10,7 @@ class Show extends React.Component {
         );
         const {recipe} = this.props
         return (
-            <Layout title="Show Page">
+            <Layout title="Show Recipe Page">
                <header className="banner"></header>
                 <nav className="navbar">
                     <a className="navlink" href="/blogs">Home</a><br/>

@@ -16,13 +16,13 @@ class Index extends React.Component {
                 <header className="banner">
                 </header>
                 <nav className="navbar">
-                    <a className="navlink" href="/blogs">Home</a><br/>
+                    <button><a href="/blogs">Home</a></button><br/>
                     <a href="/users/new" className="navlink">New Sign-Up</a>
                     <a href="/sessions/new" className="navlink">Login</a>
                     <h3 className="username">{this.props.username}</h3><br/>
                     <button>{this.props.username ? logout : '' }Logout</button>
                 </nav>
-                <div className="blogcontainer">
+                <div className="blogContainer">
                     <ul>
                         {blogs.map((blog, i) => {
                             // console.log(blog._id);
@@ -35,7 +35,7 @@ class Index extends React.Component {
                         })}
                     </ul>
                 </div>
-                <aside className="recipecontainer">
+                <aside className="recipeContainer">
                     <ul>
                         {recipes.map((recipe, i) => {
                             console.log(recipe._id);
@@ -49,7 +49,7 @@ class Index extends React.Component {
                     </ul>
                 </aside>
                 <footer className="foot">
-                    <h2></h2>
+                    <h4>Web Developer: Ryan Ross</h4>
                 </footer>
             </div> 
         </Layout>

@@ -4,7 +4,7 @@ const Layout = require('../Layout.jsx');
 class LoginUser extends React.Component {
     render() {
         return (
-            <Layout>
+            <Layout title="Login Page">
                 <header className="banner"></header>
                 <div className="userContainer">
                     <div className="userCard">

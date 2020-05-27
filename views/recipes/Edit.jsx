@@ -10,7 +10,7 @@ class EditRecipe extends React.Component {
       );
       const {recipe} = this.props;
     return (
-        <Layout>
+        <Layout title="Edit Recipe Page">
             <header className="banner">
                     <h1>Edit Recipe</h1>
             </header>
@@ -19,8 +19,8 @@ class EditRecipe extends React.Component {
                     <h3 className="username">{this.props.username}</h3><br/>
                     <button>{this.props.username ? logout : '' }Logout</button>
             </nav>
-            <div className="editcontainer">
-              <div className="editcard">
+            <div className="editContainer">
+              <div className="editCard">
                 <form action={`/recipes/edit/${recipe._id}?_method=put`} method="POST">
                     Title: <input type="text" name="title" value={recipe.title} />
                     <br/>
