@@ -178,7 +178,7 @@ article {
     width: 100%;
 }
 
-input[type='password'], input[type='text'] {
+input[type='password'], input[type='text'], textarea {
     background-color: rgb(136,174,174);
     
 }
