@@ -13,16 +13,16 @@ class Show extends React.Component {
             <Layout title="Show Recipe Page">
                <header className="banner"></header>
                 <nav className="navbar">
-                    <a className="navlink" href="/blogs">Home</a><br/>
-                    <a className="navlink" href="/recipes/new">Add a New Recipe</a><br/>
-                    <h3 className="username">{this.props.username}</h3><br/>
+                    <button><a className="navlink" href="/blogs">Home</a></button>
+                    <button><a className="navlink" href="/recipes/new">Add a New Recipe</a></button>
+                    <h3 className="username">{this.props.username}</h3>
                     <button>{this.props.username ? logout : '' }Logout</button>
                 </nav>
                 <div className= "showContainer">
                     <div className="showCard">
-                        <h1>{recipe.title}</h1>
+                        <h1 className="showtitle">{recipe.title}</h1>
                         <br/>
-                        <img src={recipe.img} style={{width: '300px'}} alt=""/>
+                        <img src={recipe.img} style={{width: '60%'}} alt=""/>
                         <br/>
                         <h3>Written By: {recipe.author}</h3>
                         <br/>

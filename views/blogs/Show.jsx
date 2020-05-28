@@ -13,16 +13,16 @@ class Show extends React.Component {
             <Layout title="Show Blog Page">
                <header className="banner"></header>
                 <nav className="navbar">
-                    <a className="navlink" href="/blogs">Home</a><br/>
-                    <a className="navlink" href="/blogs/new">Add a New Blog</a><br/>
-                    <h3 className="username">{this.props.username}</h3><br/>
+                    <button><a className="navlink" href="/blogs">Home</a></button>
+                    <button><a className="navlink" href="/blogs/new">Add a New Blog</a></button>
+                    <h3 className="username">{this.props.username}</h3>
                     <button>{this.props.username ? logout : '' }Logout</button>
                 </nav>
                 <div className= "showContainer">
                     <div className="showCard">
-                        <h1>{blog.title}</h1>
+                        <h1 className="showtitle">{blog.title}</h1>
                         <br/>
-                        <img src={blog.img} style={{width: '300px'}} alt=""/>
+                        <img src={blog.img} style={{width: '60%'}} alt=""/>
                         <br/>
                         <article>{blog.entry}</article>
                         <br/>

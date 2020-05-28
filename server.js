@@ -11,7 +11,9 @@ const blogController = require('./controllers/blogs.js');
 const userController = require('./controllers/users_controller.js');
 const recipeController = require('./controllers/recipes.js');
 const session = require('express-session');
-const bcrypt = require ('bcrypt')
+const bcrypt = require ('bcrypt');
+const User = require('./models/users.js');
+require('dotenv').config() 
 //___________________
 //Port
 //___________________
@@ -41,12 +43,18 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+app.use(session({
+    secret: process.env.SECRET, 
+    resave: false, 
+    saveUninitialized: false 
+}));
+
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 // Controllers
 app.use('/blogs', blogController);
-app.use('/user', userController);
+app.use('/users', userController);
 app.use('/recipes', recipeController);
 //___________________
 // Routes
@@ -77,7 +85,7 @@ app.post('/sessions/', (req, res) => {
             if(bcrypt.compareSync(req.body.password, foundUser.password)){
                 req.session.currentUser = foundUser.username
                 res.redirect('/blogs/')
-            }else {
+            } else {
                 res.send('WRONG PASSWORD')
             }
         }

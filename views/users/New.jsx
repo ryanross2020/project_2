@@ -7,7 +7,7 @@ class NewUser extends React.Component {
             <Layout title="New User Page">
                 <header className="banner"></header>
                 <div className="userContainer">
-                    <h1>Create New Membership</h1>
+                    <h1 className="usertitle">Create New Membership</h1>
                     <div className="userCard">
                         <form action="/sessions/" method="POST">
                             <p className="loginname">username:</p><input type="text" name="username" />

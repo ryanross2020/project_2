@@ -15,8 +15,8 @@ class Edit extends React.Component {
                     <h1>Edit Blog Post</h1>
             </header>
             <nav className="navbar">
-                    <a className="navlink" href="/blogs">Home</a><br/>
-                    <h3 className="username">{this.props.username}</h3><br/>
+                    <button><a className="navlink" href="/blogs">Home</a></button>
+                    <h3 className="username">{this.props.username}</h3>
                     <button>{this.props.username ? logout : '' }Logout</button>
             </nav>
             <div className="editContainer">

@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('../Layout.jsx');
 
-class EditRecipe extends React.Component {
+class Edit extends React.Component {
   render() {
       const logout = (
         <form action="/sessions/?_method=delete" method="post">
@@ -15,8 +15,8 @@ class EditRecipe extends React.Component {
                     <h1>Edit Recipe</h1>
             </header>
             <nav className="navbar">
-                    <a className="navlink" href="/blogs">Home</a><br/>
-                    <h3 className="username">{this.props.username}</h3><br/>
+                    <button><a className="navlink" href="/blogs">Home</a></button>
+                    <h3 className="username">{this.props.username}</h3>
                     <button>{this.props.username ? logout : '' }Logout</button>
             </nav>
             <div className="editContainer">
@@ -43,4 +43,4 @@ class EditRecipe extends React.Component {
   }
 }
 
-module.exports = EditRecipe;
+module.exports = Edit;
